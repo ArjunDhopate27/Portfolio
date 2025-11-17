@@ -1,0 +1,26 @@
+src/
+├─ pages/
+│  ├─ Home.jsx        ← Hero + intro
+│  ├─ Projects.jsx
+│  ├─ Sports.jsx
+│  └─ Contact.jsx
+│
+├─ components/        ← reusable UI
+│  ├─ Navbar.jsx
+│  ├─ Footer.jsx
+│  ├─ ProjectCard.jsx
+│  └─ SportCard.jsx
+│
+├─ data/
+│  └─ projects.js     ← local project data (future backend ke liye easy)
+│
+├─ assets/            ← images, logos
+│  ├─ me.jpg
+│  └─ project1.png
+│
+├─ styles/
+│  └─ globals.css
+│
+├─ App.jsx
+└─ main.jsx
+Pro

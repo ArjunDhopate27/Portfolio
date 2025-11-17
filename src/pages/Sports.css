@@ -1,0 +1,163 @@
+/* Hobbies.css
+   Pure CSS recreation of the Tailwind Hobbies page you uploaded.
+   Put a Google Material Symbols import in your index.html or uncomment the @import below.
+*/
+
+/* Optional: add this line to your index.html <head>:
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Material+Symbols+Outlined" rel="stylesheet" />
+*/
+
+/* If you prefer import here, uncomment: */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Material+Symbols+Outlined&display=swap'); */
+
+:root{
+  --bg-light: #f6f6f8;
+  --bg-dark-start: #0D1128;
+  --bg-dark-end: #1F1A3A;
+  --panel: rgba(255,255,255,0.04);
+  --muted: #A9AECB;
+  --accent-pink: #C058F3;
+  --accent-blue: #4A4AFF;
+  --card-radius: 14px;
+  --glass: rgba(255,255,255,0.02);
+  --fw-bold: 700;
+}
+
+.hobbies-page{
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-dark-start), var(--bg-dark-end));
+  color: #F5F5F7;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* header */
+.hobbies-header{
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand__svg{ width:34px; height:34px; color: var(--accent-pink); }
+.brand__name{ font-weight: 700; color: #F5F5F7; font-size: 16px; }
+
+/* nav */
+.nav-links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex:1;
+  justify-content:center;
+}
+.nav-links a{
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+.nav-links a:hover{ color: #fff; }
+.nav-links a.active{ color: #fff; font-weight: 700; }
+
+/* contact button */
+.btn-contact{
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-pink));
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* main intro */
+.hobbies-main{ max-width: 960px; margin: 32px auto; padding: 0 12px; }
+.hobbies-intro{ text-align:center; margin-bottom: 24px; }
+.hobbies-intro h1{ font-size: 34px; margin: 0 0 8px 0; font-weight: 800; }
+.hobbies-intro p{ color: var(--muted); max-width: 680px; margin: 0 auto; line-height:1.5; }
+
+/* grid */
+.hobbies-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 12px;
+}
+
+/* hobby card */
+.hobby-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 22px;
+  min-height: 160px;
+  transition: transform .28s ease, box-shadow .28s ease;
+  cursor: default;
+  backdrop-filter: blur(6px);
+}
+.hobby-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+}
+
+/* subtle gradient overlay that appears on hover */
+.hobby-card__overlay{
+  position:absolute;
+  inset:0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--accent-blue)/8, var(--accent-pink)/8);
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+.hobby-card:hover .hobby-card__overlay{ opacity: 1; }
+
+/* inner content */
+.hobby-card__inner{ position: relative; z-index: 2; display:flex; gap: 12px; align-items: center; flex-direction: column; text-align:center; }
+
+/* icon */
+.material-symbols-outlined{
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  font-size: 42px;
+  line-height:1;
+  color: var(--accent-pink);
+  transition: color .22s ease;
+}
+.hobby-card:hover .material-symbols-outlined{ color: #fff; }
+
+/* title & desc */
+.hobby-card__title{ margin: 8px 0 4px; font-size: 16px; font-weight: 700; color: #F5F5F7; }
+.hobby-card__desc{ margin:0; color: var(--muted); font-size: 13px; line-height:1.4; max-width: 220px; }
+
+/* footer */
+.hobbies-footer{
+  max-width: 960px;
+  margin: 36px auto 12px;
+  padding: 24px 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align:center;
+}
+.footer-links{ display:flex; gap:14px; justify-content:center; margin-bottom:12px; }
+.footer-links a{ color: var(--muted); text-decoration:none; font-weight:500; }
+.footer-socials{ display:flex; gap:12px; justify-content:center; margin-bottom:12px; color: var(--muted); }
+.social-svg{ color: var(--muted); transition: color .18s ease; }
+.social-svg:hover{ color: #fff; }
+.copyright{ color: var(--muted); font-size:13px; }
+
+/* responsive */
+@media (max-width: 980px){
+  .hobbies-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px){
+  .nav-links{ display:none; }
+  .hobbies-grid{ grid-template-columns: 1fr; }
+  .hobby-card{ padding: 18px; min-height: 140px; }
+  .hobby-card__desc{ display:none; } /* mimic the original: on small show only title initially */
+}
