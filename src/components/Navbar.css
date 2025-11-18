@@ -1,0 +1,101 @@
+/* src/components/Navbar.css */
+:root{
+  --nav-height: 68px;
+  --nav-bg: transparent;
+  --nav-border: rgba(255,255,255,0.04);
+  --muted: rgba(234,234,234,0.7);
+  --accent-start: #4A4AFF;
+  --accent-end: #C058F3;
+}
+
+/* nav root */
+.nav{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(0,0,0,0.16), transparent);
+  backdrop-filter: blur(6px);
+  /* border-bottom: 1px solid var(--nav-border); */
+}
+
+/* container */
+.nav__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* left brand area */
+.nav__left{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.nav__logo{ color: #fff; display:inline-flex; align-items:center;  }
+.nav__brand{
+  color: #fff;
+  font-weight:700;
+  text-decoration:none;
+  font-size:12px;
+}
+
+/* center links */
+.nav__links{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+}
+.nav__link{
+  color: var(--muted);
+  text-decoration:none;
+  font-weight:500;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: color .18s ease, background .18s ease, transform .18s ease;
+  font-size: 14px;
+}
+.nav__link:hover{
+  color: #fff;
+  background: rgba(255,255,255,0.02);
+  transform: translateY(-2px);
+}
+.nav__link--active{
+  color: white;
+  font-weight:700;
+  position: relative;
+}
+
+/* right CTA */
+.nav__right{
+  display:flex;
+  align-items:center;
+ 
+}
+.nav__cta{
+  display:inline-block;
+  padding: 5px 7px;
+  border-radius: 999px;
+  text-decoration:none;
+  color: #fff;
+  font-weight:100;
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  box-shadow: 0 10px 30px rgba(138,45,226,0.14);
+  transition: transform .14s ease;
+  font-size: 12px;
+}
+.nav__cta:hover{ transform: translateY(-3px); }
+
+/* responsive */
+@media (max-width: 880px){
+  .nav__links{ display:none; }
+  .nav__inner{ padding: 0 14px; }
+}

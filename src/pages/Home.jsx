@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { Link, Route } from "react-router-dom";
 
 const TechTile = ({ img, label }) => (
   <div className="tile">
@@ -26,13 +27,15 @@ const Home = () => {
           <svg className="brand__icon" viewBox="0 0 48 48" aria-hidden>
             <path d="M24 4H6V17.33V30.66H24V44H42V30.66V17.33H24V4Z" fill="currentColor" />
           </svg>
-          <span className="brand__name">John Doe</span>
+          <span className="brand__name">Arjun Dhopate</span>
         </div>
 
-        <nav className="home__links">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+        <nav className="home__links">   
+          
+          <Link to="/projects">Projects</Link>
+          <Link to="/sports">Sports</Link>
+          <Link to="/contact">Contact</Link>
+          
         </nav>
 
         <button className="home__cta">Get In Touch</button>
@@ -41,7 +44,7 @@ const Home = () => {
       {/* Hero */}
       <main className="hero">
         <section className="hero__left">
-          <h1 className="hero__title">John Doe</h1>
+          <h1 className="hero__title">Arjun Dhopate</h1>
           <h2 className="hero__subtitle">
             Full-Stack Software Engineer &amp; UI/UX Enthusiast
           </h2>

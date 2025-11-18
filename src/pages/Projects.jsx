@@ -2,6 +2,7 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import "./Projects.css";
+import Navbar from "../components/Navbar";
 
 const Projects = () => {
   const projects = [
@@ -41,6 +42,8 @@ const Projects = () => {
 
   return (
     <main className="projects-page">
+
+      <Navbar />
 
       
       <header className="projects-header">

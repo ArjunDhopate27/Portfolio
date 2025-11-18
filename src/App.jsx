@@ -19,8 +19,8 @@ function App() {
     <div style={{ background: "#19191aff" }}></div>
    
     
-      <Navbar />
-      <h1>welcome</h1>
+      {/* <Navbar /> */}
+      
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,9 +28,10 @@ function App() {
         <Route path="/sports" element={<Sports />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      
 
       <Footer />
-    
+   
     
     
 
