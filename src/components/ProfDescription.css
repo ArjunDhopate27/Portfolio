@@ -1,0 +1,50 @@
+/* ProfDescription.css */
+
+.desc-wrapper {
+  max-width: 600px;
+}
+
+.hero__title {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 800;
+  color: white;
+}
+
+.hero__subtitle {
+  margin-top: 4px;
+  font-size: 18px;
+  background: linear-gradient(90deg, #6b7cff, #be5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__desc {
+  color: #c5c9dd;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.hero__actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+}
+
+/* MOBILE CENTER */
+@media (max-width: 900px) {
+  .desc-wrapper {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
+    max-width: 260px;
+  }
+}

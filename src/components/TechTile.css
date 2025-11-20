@@ -1,0 +1,19 @@
+.tile {
+  width: 220px;
+  height: 100px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.tile__img {
+  width: 46px;
+}
+
+.tile__label {
+  font-weight: 700;
+  color: white;
+}
