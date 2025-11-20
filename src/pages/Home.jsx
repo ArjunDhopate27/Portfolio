@@ -30,7 +30,10 @@ const Home = () => {
           <Link to="/contact">Contact</Link>
         </nav>
 
-        <button className="home__cta">Get In Touch</button>
+        {/* <button className="home__cta">Get In Touch</button> */}
+        <div className="nav__cta">
+                  <Link to="/contact" className="nav__cta">Get In Touch</Link>
+                </div>
       </header>
 
       {/* HERO ROW (desktop), vertical stack (mobile) */}
