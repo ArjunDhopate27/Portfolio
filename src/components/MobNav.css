@@ -1,16 +1,17 @@
-/* Bottom Mobile Nav */
+/* Bottom Mobile Nav (responsive + hide on desktop) */
 .mob-nav {
   position: fixed;
-  bottom: 8px;              /* nav thoda niche */
+  bottom: 1px;
   left: 50%;
   transform: translateX(-50%);
   width: 92%;
-  height: 58px;             /* size thodi chhoti */
+  height: 62px;
 
-  background: rgba(0, 0, 0, 0.35);  /* darker transparent */
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(14px);
 
-  border-radius: 20px 20px 0 0;     /* bottom radius removed */
+  /* top corners rounded, bottom flat */
+  border-radius: 20px 20px 0 0;
 
   display: flex;
   justify-content: space-around;
@@ -19,6 +20,31 @@
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
   padding: 0 8px;
   z-index: 999;
+
+  /* transition for hiding/showing */
+  transition: transform 300ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
+  will-change: transform, opacity;
+}
+
+/* Hidden state -> slide down out of view */
+.mob-nav.hidden {
+  transform: translateX(-50%) translateY(110%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Visible state -> slightly above bottom */
+.mob-nav.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hide on larger screens (desktop). Adjust breakpoint as needed. */
+@media (min-width: 992px) {
+  .mob-nav {
+    display: none !important;
+  }
 }
 
 /* Each Item */
@@ -30,13 +56,13 @@
   flex-direction: column;
   align-items: center;
   gap: 3px;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
 /* Icon */
 .nav-item i {
   font-size: 22px;
-  transition: 0.3s ease;
+  transition: transform 220ms ease, opacity 220ms ease;
 }
 
 /* Hover Effect */
@@ -49,7 +75,7 @@
   background: linear-gradient(135deg, #ff6bcb, #7c5cff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(1.2);
+  transform: scale(1.18);
 }
 
 .nav-item.active span {
@@ -57,7 +83,7 @@
   color: #ffffff;
 }
 
-/* Small screens */
+/* Small screens adjustments */
 @media (max-width: 380px) {
   .mob-nav {
     height: 55px;

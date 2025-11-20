@@ -57,21 +57,6 @@ const Contact = () => {
             </SocialButton>
           </div>
 
-          <div className="contact-icons-row">
-            {/* small round icon buttons (optional) */}
-            <a className="contact-round" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram small">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.2" /><circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.2" /></svg>
-            </a>
-            <a className="contact-round" href="https://www.chess.com/" target="_blank" rel="noopener noreferrer" aria-label="Chess.com small">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M12 3v3" stroke="currentColor" strokeWidth="1.2" /><path d="M8 12a4 4 0 0 1 8 0c0 2.5-4 5-4 5s-4-2.5-4-5z" fill="currentColor" opacity="0.9"/></svg>
-            </a>
-            <a className="contact-round" href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode small">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M7 4l10 8-10 8V4z" fill="currentColor" opacity="0.95"/></svg>
-            </a>
-            <a className="contact-round" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub small">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M12 .5C5.65.5.75 5.4.75 11.75c0 4.78 3.1 8.84 7.4 10.27.54.1.74-.24.74-.53 0-.26-.01-1-.02-1.96-3.01.66-3.65-1.45-3.65-1.45-.49-1.25-1.2-1.58-1.2-1.58-.98-.67.07-.65.07-.65 1.08.07 1.65 1.11 1.65 1.11.96 1.64 2.52 1.16 3.14.89.1-.7.38-1.16.69-1.43-2.4-.27-4.92-1.2-4.92-5.34 0-1.18.42-2.14 1.11-2.9-.11-.28-.49-1.4.11-2.91 0 0 .9-.29 2.95 1.1A10.5 10.5 0 0112 6.5c.91 0 1.83.12 2.69.35 2.05-1.4 2.95-1.1 2.95-1.1.6 1.52.22 2.64.11 2.91.7.76 1.11 1.72 1.11 2.9 0 4.15-2.52 5.06-4.92 5.33.39.34.72.99.72 2 0 1.44-.01 2.6-.01 2.96 0 .29.2.64.75.52 4.3-1.44 7.4-5.5 7.4-10.27C23.25 5.4 18.35.5 12 .5z" fill="currentColor"/></svg>
-            </a>
-          </div>
         </section>
 
         <section className="contact-right">

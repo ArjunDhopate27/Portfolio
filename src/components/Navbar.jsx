@@ -20,7 +20,7 @@ const Navbar = ({ brand = "ArjunDhopate" }) => {
           <Link to="/" className="nav__link">Home</Link>
           {/* <Link to="/about" className="nav__link">About</Link> */}
           <Link to="/projects" className="nav__link">Projects</Link>
-          <Link to="/sports" className="nav__link nav__link--active">Sports</Link>
+          <Link to="/sports" className="nav__link">Sports</Link>
           <Link to="/contact" className="nav__link">Contact</Link>
         </nav>
 

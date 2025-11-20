@@ -1,300 +1,169 @@
-/* Contact.css - Responsive & mobile-friendly update */
-
+/* Contact.css — Responsive styles for Contact.jsx
+   Mobile-first. Customize color variables below.
+*/
 :root{
-  --bg: #0b0e16;
-  --panel: rgba(255,255,255,0.02);
-  --muted: #9da1b9;
-  --accent-start: #2b65ff;
-  --accent-end: #a14bff;
-
-  --container-max: 1100px;
-  --gap: 20px;
-  --radius: 14px;
+  --bg: #1a1024;
+  --card: rgba(255,255,255,0.03);
+  --muted: #c5b3ff;
+  --accent: #e79fd7; /* pink */
+  --accent-700: #8007f1; /* purple */
+  --text: #f5eaff;
+  --glass: rgba(255, 143, 255, 0.08);
+  --radius: 12px;
+  --max-width: 1100px;
 }
 
-/* page base */
-.contact-page{
-  min-height: 100vh;
-  background: linear-gradient(180deg, #0b0e16 0%, #171827 100%);
-  color: #e8eef8;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+*{box-sizing:border-box}
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #07101a 100%);
+  color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* container (centered) */
+.contact-page{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* container */
 .contact-container{
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 520px;
-  gap: var(--gap);
-  padding: 56px 20px;
-  box-sizing: border-box;
-  align-items: start;
+  width:calc(100% - 32px);
+  max-width:var(--max-width);
+  margin:28px auto 40px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
 }
 
-/* LEFT COLUMN */
-.contact-left{
-  padding-right: 8px;
+/* left / right sections stack on mobile */
+.contact-left,
+.contact-right{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
 }
 
+/* Left panel */
 .contact-title{
-  font-size: 44px;
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  margin:0 0 8px 0;
+  font-size:20px;
+  letter-spacing:0.2px;
+  color: #fff;
 }
 .contact-lead{
-  margin-top: 18px;
-  color: var(--muted);
-  max-width: 520px;
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-/* TOP SOCIAL BIG BUTTONS ROW */
-.contact-top-links{
-  margin-top: 26px;
-  display:flex;
-  gap: 12px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-.contact-social{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding: 10px 14px;
-  background: var(--panel);
-  border: 1px solid rgba(255,255,255,0.03);
-  border-radius: 12px;
-  text-decoration:none;
-  color: var(--muted);
-  min-width: 120px;
-  transition: transform .16s ease, background .16s ease, color .16s ease;
-  box-sizing: border-box;
-}
-.contact-social:hover{
-  transform: translateY(-4px);
-  background: linear-gradient(90deg, rgba(43,101,255,0.06), rgba(161,75,255,0.06));
-  color: #fff;
-}
-.contact-social__icon{
-  width:36px;
-  height:36px;
-  border-radius: 999px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background: rgba(255,255,255,0.01);
-}
-.contact-social__label{
-  font-weight:600;
-  font-size:13px;
-}
-
-/* SMALL ROUND ICONS ROW */
-.contact-icons-row{
-  margin-top:18px;
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-.contact-round{
-  display:inline-flex;
-  width:44px;
-  height:44px;
-  border-radius: 999px;
-  background: var(--panel);
-  align-items:center;
-  justify-content:center;
-  color: var(--muted);
-  border: 1px solid rgba(255,255,255,0.03);
-  transition: transform .14s ease, background .14s ease;
-}
-.contact-round:hover{
-  transform: translateY(-4px);
-  background: linear-gradient(90deg, rgba(43,101,255,0.06), rgba(161,75,255,0.06));
-  color: #fff;
-}
-
-/* RIGHT COLUMN (FORM) */
-.contact-right{}
-
-/* FORM LAYOUT */
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-/* two-column row -> stacks on mobile */
-.row-2{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-/* label & fields */
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.field-label{
-  font-weight:700;
-  color: #e7eef8;
+  margin:0 0 14px 0;
+  color:var(--muted);
+  line-height:1.5;
   font-size:14px;
 }
 
-/* inputs: accessible size + full width always */
+.contact-top-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.contact-social{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.04);
+  color:var(--text);
+  transition:transform .15s ease, background .15s;
+}
+.contact-social:hover, .contact-social:focus{
+  transform: translateY(-4px) scale(1.04);
+  background: linear-gradient(135deg, rgba(255,126,230,0.22), rgba(184,107,255,0.22));
+  box-shadow: 0 0 12px rgba(255,126,230,0.35), 0 0 20px rgba(184,107,255,0.32);
+  outline:none;
+}
+.contact-social__icon{display:inline-flex;align-items:center;justify-content:center}
+.contact-social__label{font-size:13px;color:var(--muted)}
+
+/* Right panel - form */
+.contact-form{display:flex;flex-direction:column;gap:12px}
+.row-2{display:flex;flex-direction:column;gap:12px}
+.field{display:flex;flex-direction:column}
+.field-label{font-size:12px;color:var(--muted);margin-bottom:6px}
 .field-input,
 .field-textarea{
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.04);
-  color: #e8eef8;
-  outline: none;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  padding:10px 12px;
+  border-radius:10px;
+  color:var(--text);
   font-size:14px;
-  box-sizing: border-box;
+  min-height:40px;
 }
-
-/* input specific heights */
-.field-input{
-  height:52px;
-}
-.field-textarea{
-  min-height:160px;
-  resize: vertical;
-}
-
-/* placeholder color */
 .field-input::placeholder,
-.field-textarea::placeholder{
-  color: rgba(230,238,248,0.22);
-}
-
-/* primary button — desktop */
-.btn-primary{
-  margin-top: 10px;
-  height:54px;
-  border-radius: 14px;
-  border: none;
-  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
-  color: white;
-  font-weight:800;
-  font-size:16px;
-  cursor:pointer;
-  box-shadow: 0 18px 40px rgba(43,101,255,0.12);
-  transition: transform .12s ease, box-shadow .12s ease;
-  align-self: start;
-  padding: 0 28px;
-}
-
-/* hover */
-.btn-primary:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 22px 48px rgba(43,101,255,0.18);
-}
-
-/* footer */
-.contact-footer{
-  margin-top:32px;
-  padding: 36px 20px;
-  border-top: 1px solid rgba(255,255,255,0.03);
-  color: var(--muted);
-  text-align:center;
-}
-.footer-nav{
-  display:flex;
-  gap:18px;
-  justify-content:center;
-  margin-bottom:10px;
-}
-.footer-nav a{
-  color:var(--muted);
-  text-decoration:none;
-}
-
-/* -------------------------
-   RESPONSIVE RULES (MOBILE)
-   ------------------------- */
-
-/* Medium screens */
-@media (max-width: 1100px) {
-  .contact-container{
-    grid-template-columns: 1fr 430px;
-    padding: 44px 18px;
-    gap: 18px;
-  }
-  .contact-title{ font-size: 40px; }
-}
-
-/* Small / mobile screens */
-@media (max-width: 860px) {
-  .contact-container{
-    grid-template-columns: 1fr;
-    padding: 28px 16px;
-  }
-
-  /* order: show form above intro on very small screens for quicker access (better UX)
-     If you prefer intro first, change order back by removing these two rules */
-  .contact-left { order: 2; }
-  .contact-right { order: 1; margin-bottom: 16px; }
-
-  .row-2 { grid-template-columns: 1fr; }
-
-  .contact-title { font-size: 32px; }
-  .contact-lead { font-size: 14px; max-width: 100%; }
-
-  /* social buttons should stretch/full width on small screens */
-  .contact-top-links { gap: 10px; }
-  .contact-social {
-    min-width: 0;
-    flex: 1 1 100%;
-    justify-content: flex-start;
-    padding: 12px 14px;
-  }
-  .contact-social__label { font-size: 14px; }
-
-  /* small round icons slightly smaller */
-  .contact-round { width:40px; height:40px; }
-
-  /* Button should be full width on mobile for easier tap */
-  .btn-primary {
-    width: 100%;
-    align-self: stretch;
-    padding: 0;
-  }
-
-  /* increase hit area for inputs on mobile */
-  .field-input, .field-textarea {
-    padding: 14px 16px;
-    font-size:15px;
-  }
-}
-
-/* Extra small phones */
-@media (max-width: 420px) {
-  .contact-title { font-size: 28px; }
-  .contact-lead { font-size: 13px; line-height: 1.5; }
-
-  .contact-top-links { gap: 8px; }
-  .contact-social__icon { width:34px; height:34px; }
-  .contact-social__label { display: none; } /* keep compact: show only icon on very small screens */
-  .contact-social { padding: 10px; justify-content: center; }
-}
-
-/* Focus states (accessibility) */
+.field-textarea::placeholder{color:rgba(255,255,255,0.22)}
 .field-input:focus,
-.field-textarea:focus,
-.contact-social:focus,
-.contact-round:focus,
-.btn-primary:focus {
-  outline: 3px solid rgba(43,101,255,0.14);
-  outline-offset: 2px;
+.field-textarea:focus{
+  outline:none;
+  border-color:var(--accent-700);
+  box-shadow:0 6px 18px rgba(50,150,200,0.06);
 }
+.field-textarea{resize:vertical}
+
+.btn-primary{
+  appearance:none;
+  border:0;
+  background:linear-gradient(90deg,var(--accent),var(--accent-700));
+  color:#042129;
+  padding:10px 14px;
+  font-weight:700;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow: 0 8px 22px rgba(63,199,244,0.12);
+}
+.btn-primary:hover{filter:brightness(.98);transform:translateY(-2px)}
+
+/* Footer */
+.contact-footer{margin-top:auto;padding:18px 0;background:transparent}
+.contact-footer-inner{display:flex;flex-direction:column;gap:10px;align-items:center;width:100%;max-width:var(--max-width);margin:0 auto;padding:0 16px}
+.footer-nav{display:flex;gap:14px;flex-wrap:wrap}
+.footer-nav a{color:var(--muted);text-decoration:none;font-size:13px}
+.copyright{font-size:12px;color:rgba(255,255,255,0.16)}
+
+/* Larger screens - form and info side-by-side */
+@media(min-width:768px){
+  .contact-container{flex-direction:row;padding:10px;gap:22px}
+  .contact-left{flex:0 0 42%;padding:24px}
+  .contact-right{flex:1;padding:24px}
+  .row-2{flex-direction:row}
+  .row-2 .field{flex:1}
+}
+
+@media(min-width:1024px){
+  .contact-title{font-size:24px}
+  .contact-container{gap:28px}
+}
+
+/* Small accessibility and utility tweaks */
+.contact-social[aria-hidden="true"]{opacity:0.6}
+
+/* Make sure SVG icons scale nicely */
+.contact-social svg{display:block;width:18px;height:18px}
+
+/* narrow screens - tighten paddings */
+@media(max-width:420px){
+  .contact-container{width:calc(100% - 20px);margin:20px auto}
+  .contact-left,.contact-right{padding:14px}
+  .contact-social__label{display:none} /* compact: show icons only */
+}
+
+/* Utility: visually hidden (for a11y) */
+.v-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+/* End of Contact.css */
