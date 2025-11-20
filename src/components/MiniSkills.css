@@ -7,20 +7,21 @@
 .mini-tech {
   text-align: left;
   width: 100%;
-  margin: 25px auto;
-  padding: 0 10px;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  padding: 0 2px;
 }
 
 .mini-title {
   color: var(--text);
-  font-size: 1.2rem;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 /* outer scroll box */
 .mini-scroll-box {
-  width: 100%;
+  width: 95%;
   background: #0d0d0d;
   border: 1px solid var(--border);
   padding: 10px;

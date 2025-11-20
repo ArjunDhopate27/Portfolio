@@ -6,6 +6,7 @@ import Sports from "./pages/Sports";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import './App.css'
+import MobNav from "./components/MobNav";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
       
 
       <Footer />
+      <MobNav />
    
     
     

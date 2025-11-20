@@ -1,6 +1,7 @@
 // src/components/ProfDescription.jsx
 import React from "react";
 import "./ProfDescription.css"
+import { Link } from "react-router-dom";
 
 const ProfDescription = () => {
   return (
@@ -14,8 +15,16 @@ const ProfDescription = () => {
       </p>
 
       <div className="hero__actions">
-        <button className="btn btn--primary">View My Work</button>
-        <button className="btn btn--ghost">Get In Touch</button>
+        {/* <button className="btn btn--primary">View My Work</button> */}
+        <div className="btn btn--primary">
+                  <Link to="/projects" className="nav__cta">View My Work</Link>
+                </div>
+                
+        
+        <div className="btn btn--primary">
+                  <Link to="/contact" className="nav__cta">Get In Touch</Link>
+                </div>
+
       </div>
     </div>
   );

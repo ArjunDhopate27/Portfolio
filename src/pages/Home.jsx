@@ -7,6 +7,7 @@ import ProfilePic from "../components/ProfilePic";
 import ProfDescription from "../components/ProfDescription";
 import ProfSkills from "../components/ProfSkills";
 import MiniSkills from "../components/MiniSkills";
+import ProjectsMini from "../components/ProjectsMini";
 
 const Home = () => {
 
@@ -30,7 +31,7 @@ const Home = () => {
           <Link to="/contact">Contact</Link>
         </nav>
 
-        {/* <button className="home__cta">Get In Touch</button> */}
+        
         <div className="nav__cta">
                   <Link to="/contact" className="nav__cta">Get In Touch</Link>
                 </div>
@@ -54,7 +55,7 @@ const Home = () => {
       {/* tring to genarate mini-large skills btn function */}
       {!expanded && <div><MiniSkills /><button
             onClick={() => setExpanded(true)}
-            className="homeNormalBtn"
+            className="home-viewall-btns"
           >
             View All
           </button></div>}
@@ -66,7 +67,7 @@ const Home = () => {
 
           <button
             onClick={() => setExpanded(false)}
-            className="homeNormalBtn"
+            className="home-viewall-btns"
           >
             View Less
           </button>
@@ -77,7 +78,9 @@ const Home = () => {
       
 
     {/*   Projects mini - major view  */}
-      <div></div>
+      <div>
+        <ProjectsMini />
+      </div>
 
         
 

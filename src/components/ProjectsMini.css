@@ -1,0 +1,167 @@
+/* container width 95% and centered */
+.projects-mini-wrapper {
+  width: 98%;
+  margin: 25px auto;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* header */
+.projects-mini-header h2 {
+  margin: 0 0 8px 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f0f1f5;
+  margin-left: 4px;
+}
+
+/* rail wrap positions nav buttons */
+.projects-mini-rail-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* rail: horizontal scroll, snap */
+.projects-mini-rail {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* firefox */
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  border: #f6f7f7;
+  border-width: 1px;
+}
+
+/* hide scrollbar (webkit) */
+.projects-mini-rail::-webkit-scrollbar {
+  display: none;
+  
+}
+
+/* each card smaller than normal project card */
+.mini-card {
+  flex: 0 0 auto; /* don't shrink or grow */
+  width: 160px; /* card width — tweak if needed */
+  height: 220px; /* fixed height similar to requirement */
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(10, 10, 10, 0.06);
+  padding: 10px;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* image area */
+.mini-card__img {
+  flex: 0 0 auto;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.mini-card__img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* body */
+.mini-card__body {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mini-card__title {
+  font-size: 0.9rem;
+  line-height: 1.1;
+  margin: 0;
+  color: #111827;
+  font-weight: 600;
+  height: 2.2em; /* limit to ~2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-card__skills {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.78rem;
+}
+
+/* nav buttons on sides */
+.mini-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  background: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: #111827;
+}
+
+/* left / right positions */
+.mini-nav--left {
+  left: -8px;
+}
+
+.mini-nav--right {
+  right: -8px;
+}
+
+/* footer with View All button */
+.projects-mini-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.projects-mini-viewall {
+  background: transparent;
+  border: 1px solid #3fc7f4;
+  color: #3faff4;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 9px;
+  margin-left: 3px;
+}
+
+/* responsive: show more cards on wider screens and increase card size a bit */
+@media (min-width: 1024px) {
+  .mini-card {
+    width: 180px;
+    height: 240px;
+  }
+  .projects-mini-wrapper {
+    margin: 24px auto;
+  }
+}
