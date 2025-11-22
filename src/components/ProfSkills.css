@@ -1,68 +1,154 @@
+/* ===========================
+   Global Theme Variables
+   =========================== */
 :root {
-  --bg: #000;
-  --border: #6b6b6b;
-  --card-border: #4a4a4a;
-  --text: #fff;
+  --bg: #050509;                 /* deep dark background */
+  --bg-soft: #0e0e15;            /* slightly lighter panels */
+  --primary: #9b5bff;            /* royal purple */
+  --primary-soft: #2b1a40;
+  --primary-glow: rgba(155, 91, 255, 0.4);
+
+  --accent: #ff6ac1;             /* pink accent */
+  --accent-soft: rgba(255, 106, 193, 0.25);
+
+  --text: #f7f7f7;               /* soft white */
+  --text-muted: #b7b7b7;
+
+  --border: #3c3c4a;
+  --card-border: #262636;
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+
   --gap: 18px;
 }
 
-/* container */
+/* ===========================
+   Tech Section Wrapper
+   =========================== */
 .tech {
-  background: var(--bg);
+  position: relative;
+  background: radial-gradient(circle at top left, #21122f 0, #050509 45%, #050509 100%);
   color: var(--text);
   padding: 28px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--card-border);
   max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
-/* title */
+/* subtle glow background */
+.tech::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 10% 0%, var(--primary-glow), transparent 60%),
+    radial-gradient(circle at 90% 100%, var(--accent-soft), transparent 65%);
+  opacity: 0.55;
+  filter: blur(12px);
+  z-index: 0;
+}
+
+/* so content stays above glow */
+.tech * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   Title
+   =========================== */
 .tech__title {
   font-size: clamp(1rem, 2.2vw, 1.6rem);
   margin-bottom: 18px;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #c891ff, #ff8ccf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* grid: auto-fit will increase columns as screen grows */
+/* small subtitle optional (if you use it) */
+.tech__subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* ===========================
+   Grid Layout
+   =========================== */
 .skill-grid {
   display: grid;
   gap: var(--gap);
   justify-items: center;
-  /* responsive columns: min cell width changes across breakpoints */
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   align-items: start;
   width: 100%;
   padding: 6px 12px;
 }
 
-/* uniform bubble wrapper */
+/* ===========================
+   Bubble Wrapper
+   =========================== */
 .uniform-bubble {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   width: 100%;
-  max-width: 140px; /* keeps label wrap tidy */
+  max-width: 140px;
   box-sizing: border-box;
 }
 
-/* bubble itself */
+/* ===========================
+   Bubble Box
+   =========================== */
 .uniform-inner {
-  width: 68px;        /* base bubble size for desktop */
+  width: 68px;
   height: 68px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
   border: 1px solid var(--border);
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.01),
+    0 14px 30px rgba(0,0,0,0.8);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+  backdrop-filter: blur(10px);
 }
 
-/* logo image */
+/* subtle floating even without hover (for premium feel) */
+.uniform-inner:nth-child(odd) {
+  transform: translateY(0px);
+}
+
+/* hover / focus state */
+.uniform-inner:hover,
+.uniform-inner:focus-visible {
+  transform: translateY(-6px) scale(1.06);
+  border-color: var(--primary);
+  background: radial-gradient(circle at top, rgba(155, 91, 255, 0.2), rgba(0,0,0,0.9));
+  box-shadow:
+    0 0 18px var(--primary-glow),
+    0 18px 40px rgba(0,0,0,0.9);
+  outline: none;
+}
+
+/* ===========================
+   Logo Image / Initial
+   =========================== */
 .uniform-img {
   width: 36px;
   height: 36px;
@@ -70,14 +156,15 @@
   display: block;
 }
 
-/* fallback initial */
 .uniform-initial {
   font-size: 20px;
   font-weight: 700;
   color: var(--text);
 }
 
-/* label */
+/* ===========================
+   Label
+   =========================== */
 .uniform-label {
   font-size: 13px;
   color: var(--text);
@@ -86,32 +173,80 @@
   word-break: break-word;
 }
 
-/* hover */
-.uniform-inner:hover {
-  transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.6);
+/* small muted style for secondary text */
+.uniform-label--muted {
+  color: var(--text-muted);
 }
 
-/* Medium screens: more columns (bigger min width reduces count) */
+/* ===========================
+   Responsive Breakpoints
+   =========================== */
+
+/* Medium screens */
 @media (max-width: 1100px) {
-  .skill-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
-  .uniform-inner { width: 62px; height: 62px; }
-  .uniform-img { width: 32px; height: 32px; }
+  .skill-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .uniform-inner {
+    width: 62px;
+    height: 62px;
+  }
+
+  .uniform-img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
-/* Small screens: 2-3 columns */
+/* Small screens: 2–3 columns */
 @media (max-width: 760px) {
-  .skill-grid { grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); gap: 14px; }
-  .uniform-inner { width: 56px; height: 56px; }
-  .uniform-img { width: 28px; height: 28px; }
-  .uniform-label { font-size: 12px; }
-  .tech { padding: 20px; }
+  .tech {
+    padding: 22px 18px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+    gap: 14px;
+  }
+
+  .uniform-inner {
+    width: 56px;
+    height: 56px;
+  }
+
+  .uniform-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .uniform-label {
+    font-size: 12px;
+  }
 }
 
-/* Very small phones: single column-ish small items but still grid */
+/* Very small phones */
 @media (max-width: 420px) {
-  .skill-grid { grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 12px; }
-  .uniform-inner { width: 52px; height: 52px; }
-  .uniform-img { width: 24px; height: 24px; }
-  .uniform-label { font-size: 11px; }
+  .tech {
+    padding: 18px 14px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+    gap: 12px;
+  }
+
+  .uniform-inner {
+    width: 52px;
+    height: 52px;
+  }
+
+  .uniform-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .uniform-label {
+    font-size: 11px;
+  }
 }
