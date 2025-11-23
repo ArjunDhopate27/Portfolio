@@ -1,0 +1,55 @@
+/* card */
+.sport-card{
+  position:relative;
+  border-radius:18px;
+  padding:26px 18px;
+  text-align:center;
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--card-border);
+  transition:.28s;
+}
+.sport-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 48px rgba(2,6,23,0.6);
+}
+
+.sport-card__overlay{
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(135deg,rgba(74,74,255,0.06),rgba(192,88,243,0.06));
+  opacity:0;
+  transition:.28s;
+}
+.sport-card:hover .sport-card__overlay{
+  opacity:1;
+}
+
+.sport-icon{
+  font-size:36px;
+  color:var(--accent,#C058F3);
+  transition:.22s;
+}
+.sport-card:hover .sport-icon{
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+.sport-title{
+  margin-top:12px;
+  font-size:18px;
+  font-weight:700;
+}
+.sport-desc{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:13px;
+  opacity:0;
+  height:0;
+  overflow:hidden;
+  transition:.22s;
+}
+.sport-card:hover .sport-desc{
+  opacity:1;
+  height:auto;
+}

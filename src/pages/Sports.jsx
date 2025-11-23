@@ -2,26 +2,30 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import "./Sports.css";
+import SportCard from "../components/SportCard";
 
-const SportCard = ({ iconName, title, desc, accent }) => (
-  <article className="sport-card" style={{ ["--accent"]: accent }}>
-    <div className="sport-card__overlay" />
-    <div className="sport-card__inner">
-      <span className="material-symbols-outlined sport-icon">{iconName}</span>
-      <h3 className="sport-title">{title}</h3>
-      <p className="sport-desc">{desc}</p>
-    </div>
-  </article>
-);
+
+
+// const SportCard = ({ iconName, title, desc, accent }) => (
+//   <article className="sport-card" style={{ ["--accent"]: accent }}>
+//     <div className="sport-card__overlay" />
+//     <div className="sport-card__inner">
+//       <span className="material-symbols-outlined sport-icon">{iconName}</span>
+//       <h3 className="sport-title">{title}</h3>
+//       <p className="sport-desc">{desc}</p>
+//     </div>
+//   </article>
+// );
 
 const Sports = () => {
   const items = [
-    { iconName: "sports_martial_arts", title: "Martial Arts", desc: "Training discipline & strength.", accent: "#C058F3" },
-    { iconName: "sports_soccer", title: "Football", desc: "Teamwork & strategy.", accent: "#C058F3" },
-    { iconName: "sports_basketball", title: "Basketball", desc: "Agility, focus & speed.", accent: "#C058F3" },
-    { iconName: "directions_bike", title: "Cycling", desc: "Endurance & adventure.", accent: "#4A4AFF" },
-    { iconName: "pool", title: "Swimming", desc: "Strength & relaxation.", accent: "#4A4AFF" },
-    { iconName: "skateboarding", title: "Skateboarding", desc: "Balance & creativity.", accent: "#4A4AFF" }
+  
+  { iconName: "chess", title: "Chess", desc: "Tactics, strategy & patience.", accent: "#C058F3" },
+  { iconName: "code", title: "LeetCode", desc: "Problem solving & logic sharpening.", accent: "#FFC82C" },
+
+  { iconName: "sports_kabaddi", title: "Kabaddi", desc: "Strength, focus & power.", accent: "#FF6B4A" },
+  { iconName: "sports_cricket", title: "Cricket", desc: "Teamwork, passion & skills.", accent: "#3FC7F4" }
+  
   ];
 
   return (

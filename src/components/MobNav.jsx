@@ -54,7 +54,7 @@ const MobNav = () => {
 
       <NavLink to="/sports" className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}>
         <i className="ri-trophy-fill" aria-hidden="true"></i>
-        <span>Sports</span>
+        <span>Arena</span>
       </NavLink>
 
       <NavLink to="/contact" className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}>
